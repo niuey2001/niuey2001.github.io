@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>WPF 项目实践 | WENHUI`S BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="WENHUI`S BLOG">
+    <meta name="author" content="niuwenhui">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="WENHUI`S BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/工作学习/" class="animsition-link">工作学习<small>(18)</small></a></li>
+				    
+				    <li><a href="/categories/读书/" class="animsition-link">读书<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/项目/" class="animsition-link">项目<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="https://niuey2001.github.io" class="animsition-link">xiaoniu</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="https://fastly.jsdelivr.net/gh/niuey2001/rs@5.0/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">WENHUI`S BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2020-12-21T02:29:31.000Z" itemprop="datePublished">
+          2020-12-21
+      </time>
+    
+    
+    | 
+    <a href='/tags/wpf/'>wpf</a>,
+    
+    <a href='/tags/客户端/'>客户端</a>
+    
+    
+</span>
+                <h1>WPF 项目实践</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<hr>
+<h3 id="WPF介绍"><a href="#WPF介绍" class="headerlink" title="WPF介绍"></a>WPF介绍</h3><blockquote>
+<p>&emsp; &emsp;   WPF（Windows Presentation Foundation）是微软推出的基于Windows 的用户界面框架，属于.NET Framework 3.0的一部分。它提供了统一的编程模型、语言和框架，真正做到了界面设计和服务代码的分离。<br>&emsp;  &emsp;  同时它提供了全新的多媒体交互用户图形界面。与早期的GDI+/GDI不同。WPF是基于DirectX引擎的，支持GPU硬件加速。高级别的线程绘制可以提高使用者的体验。</p>
+</blockquote>
+<hr>
+<h3 id="实战知识点"><a href="#实战知识点" class="headerlink" title="实战知识点"></a>实战知识点</h3><blockquote>
+<p>netframework4.7.2<br>Dapper（A high performance Micro-ORM supporting SQL Server, MySQL, Sqlite, SqlCE, Firebird etc..）<br>Panuon.UI.Silver（A beautiful wpf ui control library.）<br>Microsoft Visual Studio Installer Projects</p>
+</blockquote>
+<hr>
+<h4 id="获取项目前端页面，用于主界面点击切换"><a href="#获取项目前端页面，用于主界面点击切换" class="headerlink" title="获取项目前端页面，用于主界面点击切换"></a>获取项目前端页面，用于主界面点击切换</h4><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造 _partialViewDic</span></span><br><span class="line">_partialViewDic = <span class="keyword">new</span> Dictionary&lt;<span class="built_in">string</span>, Type&gt;();</span><br><span class="line">            <span class="keyword">var</span> assembly = AppDomain.CurrentDomain.GetAssemblies().FirstOrDefault(x =&gt; x.FullName.StartsWith(<span class="string">&quot;jjkcsoft&quot;</span>));</span><br><span class="line"></span><br><span class="line">            assembly.GetTypes().Where(</span><br><span class="line">                x =&gt;  !x.Namespace.IsNullOrEmpty()&amp;&amp;x.Namespace.Equals(<span class="string">&quot;jjkcsoft.PartialViews&quot;</span>) &amp;&amp; x.IsSubclassOf(<span class="keyword">typeof</span>(UserControl))</span><br><span class="line">                </span><br><span class="line">               ).ToList().ForEach(x =&gt; _partialViewDic.Add(x.Name.Remove(x.Name.Length - <span class="number">4</span>), x));</span><br><span class="line"><span class="comment">//切换页面</span></span><br><span class="line"> ContentControl.Content = Activator.CreateInstance(_partialViewDic[tag]);</span><br></pre></td></tr></table></figure>
+</br>
+
+<h4 id="机器码设计（多种硬件组合信息）"><a href="#机器码设计（多种硬件组合信息）" class="headerlink" title="机器码设计（多种硬件组合信息）"></a>机器码设计（多种硬件组合信息）</h4> <img src="https://cdn.jsdelivr.net/gh/niuey2001/rs@4.0/img/zcm.jpg" style="zoom:50%;" />
+
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">GetHardWareInfo(<span class="string">&quot;Win32_Processor&quot;</span>, <span class="string">&quot;ProcessorId&quot;</span>);</span><br><span class="line">GetHardWareInfo(<span class="string">&quot;Win32_BIOS&quot;</span>, <span class="string">&quot;SerialNumber&quot;</span>);</span><br><span class="line">GetHardWareInfo(<span class="string">&quot;Win32_BaseBoard&quot;</span>, <span class="string">&quot;SerialNumber&quot;</span>);</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="built_in">string</span> <span class="title">GetHardWareInfo</span>(<span class="params"><span class="built_in">string</span> typePath, <span class="built_in">string</span> key</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">try</span></span><br><span class="line">            &#123;</span><br><span class="line">                ManagementClass managementClass = <span class="keyword">new</span> ManagementClass(typePath);</span><br><span class="line">                ManagementObjectCollection mn = managementClass.GetInstances();</span><br><span class="line">                PropertyDataCollection properties = managementClass.Properties;</span><br><span class="line">                <span class="keyword">foreach</span> (PropertyData property <span class="keyword">in</span> properties)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span> (property.Name == key)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">foreach</span> (ManagementObject m <span class="keyword">in</span> mn)</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="keyword">return</span> m.Properties[property.Name].Value.ToString();</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">    </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            catch (Exception ex)</span><br><span class="line">            &#123;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">string</span>.Empty;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<br>
+
+<h4 id="Resource配置"><a href="#Resource配置" class="headerlink" title="Resource配置"></a>Resource配置</h4><ul>
+<li><p>引入Panuon.UI.Silver</p>
+</li>
+<li><p>引入自定义Style</p>
+</li>
+</ul>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//resource配置(ui、style)</span></span><br><span class="line">  &lt;ResourceDictionary.MergedDictionaries&gt;</span><br><span class="line">                &lt;ResourceDictionary Source=<span class="string">&quot;pack://application:,,,/Panuon.UI.Silver;component/Control.xaml&quot;</span> /&gt;</span><br><span class="line">                &lt;ResourceDictionary Source=<span class="string">&quot;pack://application:,,,/jjkcsoft;component/Resources/Styles.xaml&quot;</span> /&gt;</span><br><span class="line">            &lt;/ResourceDictionary.MergedDictionaries&gt;</span><br><span class="line"><span class="comment">//xaml使用</span></span><br><span class="line">  xmlns:pu=<span class="string">&quot;clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver&quot;</span></span><br><span class="line">  Style=<span class="string">&quot;&#123;StaticResource MainWindow&#125;&quot;</span></span><br></pre></td></tr></table></figure>
+<br>
+
+<h4 id="自定义DataGrid单元格样式"><a href="#自定义DataGrid单元格样式" class="headerlink" title="自定义DataGrid单元格样式"></a>自定义DataGrid单元格样式</h4><ul>
+<li>时间类型的单元格</li>
+<li>下拉列表单元格</li>
+<li>多行表头</li>
+<li>CheckBox单元格</li>
+</ul>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//时间类型单元格</span></span><br><span class="line"> &lt;DataTemplate x:Key=<span class="string">&quot;DateTemplate&quot;</span> &gt;</span><br><span class="line">            &lt;TextBlock Text=<span class="string">&quot;&#123;Binding sj, StringFormat=&#123;&#125;&#123;0: yyyy年MM月dd日&#125;&#125;&quot;</span> MinWidth=<span class="string">&quot;100&quot;</span>/&gt;</span><br><span class="line">        &lt;/DataTemplate&gt;</span><br><span class="line">        &lt;!--DataTemplate <span class="keyword">for</span> the Published Date column <span class="keyword">when</span> <span class="keyword">in</span> edit mode. --&gt;</span><br><span class="line">        &lt;DataTemplate x:Key=<span class="string">&quot;EditingDateTemplate&quot;</span>&gt;</span><br><span class="line">            &lt;DatePicker SelectedDate=<span class="string">&quot;&#123;Binding sj&#125;&quot;</span> /&gt;</span><br><span class="line">        &lt;/DataTemplate&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//单元格下拉自定义</span></span><br><span class="line">        &lt;ObjectDataProvider x:Key=<span class="string">&quot;kms&quot;</span>  ObjectType=<span class="string">&quot;&#123;x:Type local:KmService&#125;&quot;</span> MethodName=<span class="string">&quot;Getkms&quot;</span>&gt;</span><br><span class="line">        &lt;/ObjectDataProvider&gt;        </span><br><span class="line">       &lt;DataTemplate x:Key=<span class="string">&quot;EdComTemplate&quot;</span> &gt;</span><br><span class="line">            &lt;ComboBox  </span><br><span class="line">                Height=<span class="string">&quot;30&quot;</span>  MinWidth=<span class="string">&quot;80&quot;</span></span><br><span class="line">               pu:ComboBoxHelper.CornerRadius=<span class="string">&quot;2&quot;</span></span><br><span class="line">               pu:ComboBoxHelper.DropDownCornerRadius=<span class="string">&quot;2&quot;</span></span><br><span class="line">              pu:ComboBoxHelper.DropDownPadding=<span class="string">&quot;0,5&quot;</span></span><br><span class="line">              ItemsSource=<span class="string">&quot;&#123;Binding Source=&#123;StaticResource kms&#125;&#125;&quot;</span></span><br><span class="line">                DisplayMemberPath=<span class="string">&quot;mc&quot;</span></span><br><span class="line">                SelectedValuePath=<span class="string">&quot;dm&quot;</span></span><br><span class="line">               SelectedValue=<span class="string">&quot;&#123;Binding kmbh, UpdateSourceTrigger=PropertyChanged&#125;&quot;</span>&gt;</span><br><span class="line">            &lt;/ComboBox&gt;</span><br><span class="line">        &lt;/DataTemplate&gt;</span><br><span class="line">  &lt;DataTemplate x:Key=<span class="string">&quot;ComTemplate&quot;</span>  &gt;</span><br><span class="line">            &lt;TextBlock Text=<span class="string">&quot;&#123;Binding kmbh&#125;&quot;</span> MinWidth=<span class="string">&quot;100&quot;</span> /&gt;</span><br><span class="line">        &lt;/DataTemplate&gt;                  </span><br><span class="line">&lt;DataGridTemplateColumn  Header=<span class="string">&quot;费用科目&quot;</span> CellTemplate=<span class="string">&quot;&#123;StaticResource ComTemplate&#125;&quot;</span> CellEditingTemplate=<span class="string">&quot;&#123;StaticResource EdComTemplate&#125;&quot;</span> Width=<span class="string">&quot;100&quot;</span>/&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//多行表头</span></span><br><span class="line">&lt;Style x:Key=<span class="string">&quot;JdStyle&quot;</span> TargetType=<span class="string">&quot;&#123;x:Type DataGridColumnHeader&#125;&quot;</span>&gt;</span><br><span class="line">            &lt;Setter Property=<span class="string">&quot;Template&quot;</span>&gt;</span><br><span class="line">                &lt;Setter.Value&gt;</span><br><span class="line">                    &lt;ControlTemplate&gt;</span><br><span class="line">                        &lt;Grid x:Name=<span class="string">&quot;Root&quot;</span>&gt;</span><br><span class="line">                            &lt;Grid.ColumnDefinitions&gt;</span><br><span class="line">                                &lt;ColumnDefinition/&gt;</span><br><span class="line">                                &lt;ColumnDefinition Width=<span class="string">&quot;Auto&quot;</span>/&gt;</span><br><span class="line">                            &lt;/Grid.ColumnDefinitions&gt;</span><br><span class="line">                            &lt;Grid</span><br><span class="line">                                Grid.Column=<span class="string">&quot;0&quot;</span></span><br><span class="line">                                HorizontalAlignment=<span class="string">&quot;&#123;TemplateBinding HorizontalContentAlignment&#125;&quot;</span></span><br><span class="line">                                VerticalAlignment=<span class="string">&quot;&#123;TemplateBinding VerticalContentAlignment&#125;&quot;</span>&gt;</span><br><span class="line">                                &lt;Grid.RowDefinitions&gt;</span><br><span class="line">                                    &lt;RowDefinition Height=<span class="string">&quot;30&quot;</span>/&gt;</span><br><span class="line">                                    &lt;RowDefinition Height=<span class="string">&quot;Auto&quot;</span>/&gt;</span><br><span class="line">                                    &lt;RowDefinition Height=<span class="string">&quot;30&quot;</span>/&gt;</span><br><span class="line">                                &lt;/Grid.RowDefinitions&gt;</span><br><span class="line">                                &lt;Grid.ColumnDefinitions&gt;</span><br><span class="line">                                    &lt;ColumnDefinition Width=<span class="string">&quot;50&quot;</span>/&gt;</span><br><span class="line">                                    &lt;ColumnDefinition Width=<span class="string">&quot;Auto&quot;</span>/&gt;</span><br><span class="line">                                    &lt;ColumnDefinition Width=<span class="string">&quot;50&quot;</span>/&gt;</span><br><span class="line"></span><br><span class="line">                                &lt;/Grid.ColumnDefinitions&gt;</span><br><span class="line">                                &lt;ContentPresenter</span><br><span class="line">                                    Grid.Row=<span class="string">&quot;0&quot;</span></span><br><span class="line">                                    Grid.Column=<span class="string">&quot;0&quot;</span></span><br><span class="line">                                    Grid.ColumnSpan=<span class="string">&quot;3&quot;</span></span><br><span class="line">                                    HorizontalAlignment=<span class="string">&quot;Center&quot;</span></span><br><span class="line">                                    VerticalAlignment=<span class="string">&quot;Center&quot;</span></span><br><span class="line">                                    Content=<span class="string">&quot;方向&quot;</span>/&gt;</span><br><span class="line">                                &lt;Rectangle</span><br><span class="line">                                    Grid.Row=<span class="string">&quot;1&quot;</span></span><br><span class="line">                                    Grid.Column=<span class="string">&quot;0&quot;</span></span><br><span class="line">                                    Grid.ColumnSpan=<span class="string">&quot;3&quot;</span></span><br><span class="line">                                    VerticalAlignment=<span class="string">&quot;Stretch&quot;</span> Height=<span class="string">&quot;1&quot;</span></span><br><span class="line">                                    Fill=<span class="string">&quot;#C0C0C0&quot;</span></span><br><span class="line">                                    Visibility=<span class="string">&quot;Visible&quot;</span>/&gt;</span><br><span class="line">                                &lt;ContentPresenter</span><br><span class="line">                                    Grid.Row=<span class="string">&quot;2&quot;</span></span><br><span class="line">                                    Grid.Column=<span class="string">&quot;0&quot;</span></span><br><span class="line">                                    HorizontalAlignment=<span class="string">&quot;Center&quot;</span></span><br><span class="line">                                    VerticalAlignment=<span class="string">&quot;Center&quot;</span></span><br><span class="line">                                    Content=<span class="string">&quot;借&quot;</span>/&gt;</span><br><span class="line">                                &lt;Rectangle</span><br><span class="line">                                    Grid.Row=<span class="string">&quot;2&quot;</span></span><br><span class="line">                                    Grid.Column=<span class="string">&quot;1&quot;</span></span><br><span class="line">                                    Width=<span class="string">&quot;1&quot;</span></span><br><span class="line">                                    VerticalAlignment=<span class="string">&quot;Stretch&quot;</span></span><br><span class="line">                                    Fill=<span class="string">&quot;#ccc&quot;</span></span><br><span class="line">                                    Visibility=<span class="string">&quot;Visible&quot;</span>/&gt;</span><br><span class="line">                                &lt;ContentPresenter</span><br><span class="line">                                    Grid.Row=<span class="string">&quot;2&quot;</span></span><br><span class="line">                                    Grid.Column=<span class="string">&quot;2&quot;</span></span><br><span class="line">                                    HorizontalAlignment=<span class="string">&quot;Center&quot;</span></span><br><span class="line">                                    VerticalAlignment=<span class="string">&quot;Center&quot;</span></span><br><span class="line">                                    Content=<span class="string">&quot;贷&quot;</span>/&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                            &lt;/Grid&gt;</span><br><span class="line">                            &lt;Rectangle</span><br><span class="line">                                Grid.Column=<span class="string">&quot;1&quot;</span></span><br><span class="line">                                Width=<span class="string">&quot;1&quot;</span></span><br><span class="line">                                VerticalAlignment=<span class="string">&quot;Stretch&quot;</span></span><br><span class="line">                                Fill=<span class="string">&quot;#ccc&quot;</span></span><br><span class="line">                                Visibility=<span class="string">&quot;Visible&quot;</span>/&gt;</span><br><span class="line">                        &lt;/Grid&gt;</span><br><span class="line">                    &lt;/ControlTemplate&gt;</span><br><span class="line">                &lt;/Setter.Value&gt;</span><br><span class="line">            &lt;/Setter&gt;</span><br><span class="line">  &lt;/Style&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//checkbox单元格  </span></span><br><span class="line">&lt;DataGridTemplateColumn HeaderStyle=<span class="string">&quot;&#123;StaticResource JdStyle&#125;&quot;</span>&gt;</span><br><span class="line">                                    &lt;DataGridTemplateColumn.CellTemplate&gt;</span><br><span class="line">                                        &lt;DataTemplate&gt;</span><br><span class="line">                                            &lt;StackPanel Orientation=<span class="string">&quot;Horizontal&quot;</span>   &gt;</span><br><span class="line">                                                &lt;CheckBox  Width=<span class="string">&quot;50&quot;</span>   Margin=<span class="string">&quot;-10,0,0,0&quot;</span> x:Name=<span class="string">&quot;jf&quot;</span></span><br><span class="line">                                                    IsChecked=<span class="string">&quot;&#123;Binding jf,Converter=&#123;StaticResource jdfconvert&#125;, UpdateSourceTrigger=PropertyChanged&#125;&quot;</span> /&gt;</span><br><span class="line">                                                &lt;Rectangle Width=<span class="string">&quot;1&quot;</span> Fill=<span class="string">&quot;#C0C0C0&quot;</span>  MinHeight=<span class="string">&quot;32&quot;</span>/&gt;</span><br><span class="line">                                                &lt;CheckBox  Width=<span class="string">&quot;40&quot;</span>   Margin=<span class="string">&quot;0,0,0,0&quot;</span>         </span><br><span class="line">                                                    IsChecked=<span class="string">&quot;&#123;Binding jf,Converter=&#123;StaticResource jfdconvert&#125;, UpdateSourceTrigger=PropertyChanged&#125;&quot;</span> /&gt;</span><br><span class="line">                                            &lt;/StackPanel&gt;</span><br><span class="line">                                        &lt;/DataTemplate&gt;</span><br><span class="line">                                    &lt;/DataGridTemplateColumn.CellTemplate&gt;</span><br><span class="line">                                &lt;/DataGridTemplateColumn&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//自定义转换器 （转换数据库0/1 到 false/true 用于CheckBox）</span></span><br><span class="line"> <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">JdfConvert</span> : <span class="title">IValueConverter</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//当值从绑定源传播给绑定目标时，调用方法Convert</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="built_in">object</span> <span class="title">Convert</span>(<span class="params"><span class="built_in">object</span> <span class="keyword">value</span>, Type targetType, <span class="built_in">object</span> parameter, CultureInfo culture</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">value</span>.ToString() == <span class="string">&quot;1&quot;</span> ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//当值从绑定目标传播给绑定源时，调用此方法ConvertBack</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="built_in">object</span> <span class="title">ConvertBack</span>(<span class="params"><span class="built_in">object</span> <span class="keyword">value</span>, Type targetType, <span class="built_in">object</span> parameter, CultureInfo culture</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> (<span class="built_in">bool</span>)<span class="keyword">value</span> ? <span class="string">&quot;1&quot;</span> : <span class="string">&quot;0&quot;</span>;</span><br><span class="line">    </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;                                                   </span><br></pre></td></tr></table></figure>
+<br>
+
+<h4 id="Dapper使用"><a href="#Dapper使用" class="headerlink" title="Dapper使用"></a>Dapper使用</h4><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Button_Click_1</span>(<span class="params"><span class="built_in">object</span> sender, RoutedEventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> p = dg.SelectedItem <span class="keyword">as</span> Zzfzz;</span><br><span class="line">    <span class="keyword">var</span> x = xm.SelectedItem <span class="keyword">as</span> jjkcsoft.Models.Xm;</span><br><span class="line">    <span class="keyword">var</span> x1 = nd.SelectedItem <span class="keyword">as</span> jjkcsoft.Models.Nd;</span><br><span class="line">    <span class="keyword">var</span> pzh = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">var</span> zy = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">var</span> kmbh = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="built_in">double</span> dfje = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">double</span> jfje = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">double</span> ye = <span class="number">0</span>;</span><br><span class="line">    DateTime v_kssj, v_jssj;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (p == <span class="literal">null</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">var</span> result = MessageBoxX.Show(<span class="string">&quot;请选择要更新的行&quot;</span>, <span class="string">&quot;Warning&quot;</span>, Application.Current.MainWindow, MessageBoxButton.OK, <span class="keyword">new</span> MessageBoxXConfigurations()</span><br><span class="line">        &#123;</span><br><span class="line">            MessageBoxIcon = MessageBoxIcon.Warning,</span><br><span class="line">            ButtonBrush = <span class="string">&quot;#F1C825&quot;</span>.ToColor().ToBrush(),</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">using</span> (<span class="keyword">var</span> conn = DbHelper.getCon())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">int</span> count = conn.Query&lt;<span class="built_in">int</span>&gt;(<span class="string">&quot;select * from TAB where id=@id&quot;</span>, <span class="keyword">new</span> &#123; id = p.id &#125;).FirstOrDefault();</span><br><span class="line">        <span class="built_in">int</span> gs = conn.Query&lt;<span class="built_in">int</span>&gt;(<span class="string">&quot;select count(1) from TAB  where xmbh=@xmbh and kmbh=@kmbh and nd=@nd&quot;</span>, <span class="keyword">new</span> &#123; xmbh = x.xmbh ,kmbh=p.kmbh ,nd=x1.nd&#125;).FirstOrDefault();</span><br><span class="line">        gs = gs + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">switch</span> (p.kmbh)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;8.1&quot;</span>:</span><br><span class="line">                kmbh = p.kmbh;</span><br><span class="line">                  v_kssj = p.sj.AddDays(<span class="number">1</span> - p.sj.Day);</span><br><span class="line">                  v_jssj = p.sj.AddDays(<span class="number">1</span> - p.sj.Day).AddMonths(<span class="number">1</span>).AddDays(<span class="number">-1</span>);</span><br><span class="line">                 dfje = conn.Query&lt;<span class="built_in">double</span>&gt;(<span class="string">&quot;select  sum(jejf) from TAB where xmbh=@xmbh and kmbh not in (&#x27;8.1&#x27;,&#x27;8.2&#x27;,&#x27;8.3&#x27;) and nd=@nd and sj&gt;=@kssj and sj&lt;=@jssj&quot;</span>, <span class="keyword">new</span> &#123; xmbh = x.xmbh, nd = x1.nd, kssj = v_kssj, jssj = v_jssj &#125;).FirstOrDefault();</span><br><span class="line">                 pzh = <span class="string">&quot;结-&quot;</span> + p.sj.ToString(<span class="string">&quot;MM&quot;</span>) + gs.ToString().PadLeft(<span class="number">2</span>, <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">                 <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;8.2&quot;</span>:</span><br><span class="line">                kmbh = p.kmbh;</span><br><span class="line">                v_kssj = p.sj.AddDays(<span class="number">1</span> - p.sj.Day);</span><br><span class="line">                  v_jssj = p.sj.AddDays(<span class="number">1</span> - p.sj.Day).AddMonths(<span class="number">1</span>).AddDays(<span class="number">-1</span>);</span><br><span class="line">                jfje = conn.Query&lt;<span class="built_in">double</span>&gt;(<span class="string">&quot;select  sum(jejf) from TAB where xmbh=@xmbh  and kmbh not in (&#x27;8.1&#x27;,&#x27;8.2&#x27;,&#x27;8.3&#x27;) and nd=@nd and sj&gt;=@kssj and sj&lt;=@jssj&quot;</span>, <span class="keyword">new</span> &#123; xmbh = x.xmbh, nd = x1.nd, kssj = v_kssj, jssj = v_jssj &#125;).FirstOrDefault();</span><br><span class="line">                dfje = conn.Query&lt;<span class="built_in">double</span>&gt;(<span class="string">&quot;select  sum(jedf) from TAB where xmbh=@xmbh  and kmbh not in (&#x27;8.1&#x27;,&#x27;8.2&#x27;,&#x27;8.3&#x27;) and nd=@nd and sj&gt;=@kssj and sj&lt;=@jssj&quot;</span>, <span class="keyword">new</span> &#123; xmbh = x.xmbh, nd = x1.nd, kssj = v_kssj, jssj = v_jssj &#125;).FirstOrDefault();</span><br><span class="line">                zy = <span class="string">&quot;本月合计&quot;</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;8.3&quot;</span>:</span><br><span class="line">                kmbh = p.kmbh;</span><br><span class="line"></span><br><span class="line">                v_kssj = DateTime.Parse(p.sj.ToString(<span class="string">&quot;yyyy-01-01&quot;</span>));</span><br><span class="line">                v_jssj=DateTime.Parse(p.sj.ToString(<span class="string">&quot;yyyy-01-01&quot;</span>)).AddYears(<span class="number">1</span>).AddDays(<span class="number">-1</span>);</span><br><span class="line">                jfje = conn.Query&lt;<span class="built_in">double</span>&gt;(<span class="string">&quot;select  sum(jejf) from TAB where xmbh=@xmbh  and kmbh not in (&#x27;8.1&#x27;,&#x27;8.2&#x27;,&#x27;8.3&#x27;) and nd=@nd and sj&gt;=@kssj and sj&lt;=@jssj&quot;</span>, <span class="keyword">new</span> &#123; xmbh = x.xmbh, nd = x1.nd, kssj = v_kssj, jssj = v_jssj &#125;).FirstOrDefault();</span><br><span class="line">                dfje = conn.Query&lt;<span class="built_in">double</span>&gt;(<span class="string">&quot;select  sum(jedf) from TAB where xmbh=@xmbh  and kmbh not in (&#x27;8.1&#x27;,&#x27;8.2&#x27;,&#x27;8.3&#x27;) and nd=@nd and sj&gt;=@kssj and sj&lt;=@jssj&quot;</span>, <span class="keyword">new</span> &#123; xmbh = x.xmbh, nd = x1.nd, kssj = v_kssj, jssj = v_jssj &#125;).FirstOrDefault();</span><br><span class="line">                zy = <span class="string">&quot;本年累计&quot;</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="literal">default</span>:</span><br><span class="line">                pzh = p.kmbh + <span class="string">&quot;-&quot;</span> + p.sj.ToString(<span class="string">&quot;MM&quot;</span>) + gs.ToString().PadLeft(<span class="number">2</span>, <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">                zy = p.zy;</span><br><span class="line">                kmbh = p.kmbh;</span><br><span class="line">                dfje = p.jedf;</span><br><span class="line">                jfje = p.jejf;</span><br><span class="line">                ye = p.ye;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (count == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            conn.Execute(<span class="string">&quot;insert into TAB(c1,c2,c3) values(@c1,@c2,@c3)&quot;</span>, <span class="keyword">new</span></span><br><span class="line">            &#123;c1=c1,c2=c2,c3=c3</span><br><span class="line">            &#125;); </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">            conn.Execute(<span class="string">&quot;update TAB set c1=@c1,c2=@c2  where id=@id&quot;</span>, <span class="keyword">new</span></span><br><span class="line">            &#123;</span><br><span class="line">              &#123;c1=c1,c2=c2,c3=c3</span><br><span class="line">            &#125;); </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">var</span> result = MessageBoxX.Show(<span class="string">&quot;保存成功&quot;</span>, <span class="string">&quot;Success&quot;</span>, Application.Current.MainWindow, MessageBoxButton.OK, <span class="keyword">new</span> MessageBoxXConfigurations()</span><br><span class="line">        &#123;</span><br><span class="line">            MessageBoxIcon = MessageBoxIcon.Success,</span><br><span class="line">            ButtonBrush = <span class="string">&quot;#75CD43&quot;</span>.ToColor().ToBrush(),</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="项目部分页面"><a href="#项目部分页面" class="headerlink" title="项目部分页面"></a>项目部分页面</h3> <img src="https://cdn.jsdelivr.net/gh/niuey2001/rs@4.0/img/index.png">
+<img src="https://cdn.jsdelivr.net/gh/niuey2001/rs@4.0/img/ndyfxm.jpg">
+<img src="https://cdn.jsdelivr.net/gh/niuey2001/rs@4.0/img/zzyf.jpg">
+<img src="https://cdn.jsdelivr.net/gh/niuey2001/rs@4.0/img/yhmx.jpg">
+<img src="https://cdn.jsdelivr.net/gh/niuey2001/rs@4.0/img/yhqk.jpg" >
+
+
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2020/12/24/jscdn/" style="float: left;">
+        ← JSDELIVR
+    </a>
+    
+    
+    <a class="pull-right" href="/2020/05/09/nfs/">
+        NFS →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By niuwenhui. All Rights Reserved.
+                </p>
+                <p>Theme By  Kieran </p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+            <style>
+.local-search-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: rgba(255, 255, 255, .9);
+  color: #333;
+  z-index: 9999;
+  border-radius: 5px;
+  overflow: scroll;
+}
+#local-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #151515;
+  background-color: initial;
+}
+.search-result-list {
+  list-style: none;
+  padding-left: 0;
+}
+.search-result-list > li {
+  margin-top: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: all ease .3s;
+}
+.search-result-list > li:hover {
+  border-bottom: 1px solid gray;
+}
+.search-result-title {
+  font-size: 16px;
+}
+.search-result {
+  line-height: 20px;
+}
+.search-keyword {
+  font-weight: normal;
+  color: #c00;
+}
+
+@media (min-width: 890px) {
+  .popup-btn-close {
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    border: 1px solid #151515;
+    padding: 0px 10px;
+    border-top-left-radius: 8px;
+    cursor: pointer;
+    transition: all ease .3s;
+  }
+  .popup-btn-close:hover {
+    background: #151515;
+    opacity: .9;
+    color: #fff;
+  }
+}
+@media (max-width: 890px) {
+  .popup-btn-close {
+    font-size: 0;
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px #888;
+    cursor: pointer;
+  }
+  .popup-btn-close::after {
+    content: '←';
+    color: #151515;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+</style>
+
+<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="local-search-header clearfix">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+          <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+        </div>
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/ziploader.js"></script>
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // get search zip version
+    $.get('/searchVersion.txt?t=' + (+new Date()), function(res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson () {
+      initLoad(['/search.zip'], {
+        loadOptions: {
+          success: function(obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function(e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions:{
+          'json':'application/json'
+        }
+      })
+    }
+
+
+    // search function;
+    var searchFunc = function(search_id, content_id) {
+      'use strict';
+
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function() {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function(data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title ? data.title.trim() : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content ? data.content.trim().replace(/<[^>]+>/g,"") : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function(keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0, position = [], index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+
+            // show search results
+
+            if (isMatch) {
+              // sort index by position of keyword
+
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+
+              // merge hits into slices
+
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+
+                  // move to next position of hit
+
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {
+                  hits: hits,
+                  start: start,
+                  end: end,
+                  searchTextCount: searchTextCountInSlice
+                };
+              }
+
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if(start < 0){
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if(end > content.length){
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+
+              // sort slices in content by search text's count and hits' count
+
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+
+              // select top N slices in content
+
+              var upperBound = parseInt('2');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+
+              // highlight title and content
+
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+
+              var resultItem = '';
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+              } else {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+              }
+
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "'>" +
+                  "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                  "...</p>" + "</a>";
+              });
+
+              resultItem += "</li>";
+              resultItems.push({
+                item: resultItem,
+                searchTextCount: searchTextCount,
+                hitCount: hitCount,
+                id: resultItems.length
+              });
+            }
+          })
+        };
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<ul class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</ul>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+
+      // remove loading animation
+      $('body').css('overflow', '');
+
+      proceedsearch();
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        $('.sb-close').click();
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+      
+</body>
+</html>

@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>JVM笔记 | WENHUI`S BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="WENHUI`S BLOG">
+    <meta name="author" content="niuwenhui">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="WENHUI`S BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/工作学习/" class="animsition-link">工作学习<small>(18)</small></a></li>
+				    
+				    <li><a href="/categories/读书/" class="animsition-link">读书<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/项目/" class="animsition-link">项目<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="https://niuey2001.github.io" class="animsition-link">xiaoniu</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="https://fastly.jsdelivr.net/gh/niuey2001/rs@5.0/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">WENHUI`S BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2019-01-28T02:06:05.000Z" itemprop="datePublished">
+          2019-01-28
+      </time>
+    
+    
+    | 
+    <a href='/tags/jmap、内存/'>jmap、内存</a>
+    
+    
+</span>
+                <h1>JVM笔记</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h4 id="堆-Heap-和非堆-Non-heap-内存"><a href="#堆-Heap-和非堆-Non-heap-内存" class="headerlink" title="堆(Heap)和非堆(Non-heap)内存"></a>堆(Heap)和非堆(Non-heap)内存</h4><blockquote>
+<p>官方：“Java 虚拟机具有一个堆，堆是运行时数据区域，所有类实例和数组的内存均从此处分配。堆是在 Java 虚拟机启动时创建的。”“在JVM中堆之外的内存称为非堆内存(Non-heap memory)”。<br>JVM主要管理两种类型的内存：堆和非堆。简单来说堆就是Java代码可及的内存，是留给开发人员使用的；非堆就是JVM留给自己用的，<br>所以方法区、JVM内部处理或优化所需的内存(如JIT编译后的代码缓存)、每个类结构(如运行时常数池、字段和方法数据)以及方法和构造方法的代码都在非堆内存中。</p>
+</blockquote>
+<h4 id="内存基本概念"><a href="#内存基本概念" class="headerlink" title="内存基本概念"></a>内存基本概念</h4><p>PermGen space：全称是Permanent Generation space，即永久代。就是说是永久保存的区域,用于存放Class和Meta信息，Class在被Load的时候被放入该区域，GC(Garbage Collection)应该不会对PermGen space进行清理，所以如果你的APP会LOAD很多CLASS的话，就很可能出现PermGen space错误。</p>
+<p>Heap space：存放Instance。</p>
+<p>Java Heap分为3个区，Young即新生代，Old即老生代和Permanent。</p>
+<p>Young保存刚实例化的对象。当该区被填满时，GC会将对象移到Old区。Permanent区则负责保存反射对象。</p>
+<h4 id="堆内存分配"><a href="#堆内存分配" class="headerlink" title="堆内存分配"></a>堆内存分配</h4><ul>
+<li>JVM初始分配的堆内存由-Xms指定，默认是物理内存的1/64；</li>
+<li>JVM最大分配的堆内存由-Xmx指定，默认是物理内存的1/4。</li>
+<li>默认空余堆内存小于40%时，JVM就会增大堆直到-Xmx的最大限制；</li>
+<li>空余堆内存大于70%时，JVM会减少堆直到-Xms的最小限制。</li>
+<li>服务器一般设置-Xms、-Xmx 相等以避免在每次GC 后调整堆的大小。</li>
+<li>说明：如果-Xmx 不指定或者指定偏小，应用可能会导致java.lang.OutOfMemory错误，此错误来自JVM，不是Throwable的，无法用try…catch捕捉</li>
+</ul>
+<h4 id="JVM内存设置参数"><a href="#JVM内存设置参数" class="headerlink" title="JVM内存设置参数"></a>JVM内存设置参数</h4><table>
+<thead>
+<tr>
+<th>设置项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-Xms512m</td>
+<td>表示JVM初始分配的堆内存大小为512m（JVM Heap(堆内存)最小尺寸，初始分配）</td>
+</tr>
+<tr>
+<td>-Xmx1024m</td>
+<td>JVM最大允许分配的堆内存大小为1024m，按需分配（JVM Heap(堆内存)最大允许的尺寸，按需分配）</td>
+</tr>
+<tr>
+<td>-XX:PermSize=512M</td>
+<td>JVM初始分配的非堆内存</td>
+</tr>
+<tr>
+<td>-XX:MaxPermSize=1024M</td>
+<td>JVM最大允许分配的非堆内存，按需分配</td>
+</tr>
+<tr>
+<td>-XX:NewSize</td>
+<td>定义YOUNG段的尺寸，NewSize为JVM启动时YOUNG的内存大小</td>
+</tr>
+<tr>
+<td>-XX:MaxNewSize</td>
+<td>MaxNewSize为最大可占用的YOUNG内存大小</td>
+</tr>
+<tr>
+<td>-XX:SurvivorRatio</td>
+<td>设置YOUNG代中Survivor空间和Eden空间的比例</td>
+</tr>
+</tbody></table>
+<h4 id="内存申请过程"><a href="#内存申请过程" class="headerlink" title="内存申请过程"></a>内存申请过程</h4><ul>
+<li>JVM会试图为相关Java对象在Eden中初始化一块内存区域</li>
+<li>当Eden空间足够时，内存申请结束。否则到下一步</li>
+<li>JVM试图释放在Eden中所有不活跃的对象（这属于1或更高级的垃圾回收）；释放后若Eden空间仍然不足以放入新对象，则试图将部分Eden中活跃对象放入Survivor区/OLD区</li>
+<li>Survivor区被用来作为Eden及OLD的中间交换区域，当OLD区空间足够时，Survivor区的对象会被移到Old区，否则会被保留在Survivor区</li>
+<li>当OLD区空间不够时，JVM会在OLD区进行完全的垃圾收集（0级）<br>完全垃圾收集后，若Survivor及OLD区仍然无法存放从Eden复制过来的部分对象，导致JVM无法在Eden区为新对象创建内存区域，则出现”out of memory错误”</li>
+</ul>
+<h4 id="内存设置示例"><a href="#内存设置示例" class="headerlink" title="内存设置示例"></a>内存设置示例</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">-Xmx2000M -Xms2000M -Xmn500M</span><br><span class="line">-XX:PermSize=250M -XX:MaxPermSize=250M</span><br><span class="line">-Xss256K</span><br><span class="line">-XX:+DisableExplicitGC</span><br><span class="line">-XX:SurvivorRatio=1</span><br><span class="line">-XX:+UseConcMarkSweepGC</span><br><span class="line">-XX:+UseParNewGC</span><br><span class="line">-XX:+CMSParallelRemarkEnabled</span><br><span class="line">-XX:+UseCMSCompactAtFullCollection</span><br><span class="line">-XX:CMSFullGCsBeforeCompaction=0</span><br><span class="line">-XX:+CMSClassUnloadingEnabled</span><br><span class="line">-XX:LargePageSizeInBytes=128M</span><br><span class="line">-XX:+UseFastAccessorMethods</span><br><span class="line">-XX:+UseCMSInitiatingOccupancyOnly</span><br><span class="line">-XX:CMSInitiatingOccupancyFraction=60</span><br><span class="line">-XX:SoftRefLRUPolicyMSPerMB=0</span><br><span class="line">-XX:+PrintClassHistogram</span><br><span class="line">-XX:+PrintGCDetails</span><br><span class="line">-XX:+PrintGCTimeStamps</span><br><span class="line">-XX:+PrintHeapAtGC</span><br><span class="line">-Xloggc:<span class="built_in">log</span>/gc.log</span><br></pre></td></tr></table></figure>
+<h4 id="内存回收算法"><a href="#内存回收算法" class="headerlink" title="内存回收算法"></a>内存回收算法</h4><ul>
+<li>–XX:+UseSerialGC</li>
+<li>–XX:+UseParallelGC</li>
+<li>–XX:+UseParallelOldGC</li>
+<li>–XX:+UseConcMarkSweepGC</li>
+</ul>
+<blockquote>
+<p>Serial Collector<br>大部分平台或者强制 java -client 默认会使用这种。<br>young generation算法 = serial<br>old generation算法 = serial (mark-sweep-compact)<br>这种方法的缺点很明显, stop-the-world, 速度慢。服务器应用不推荐使用。</p>
+</blockquote>
+<blockquote>
+<p>Parallel Collector<br>在linux x64上默认是这种，其他平台要加 java -server 参数才会默认选用这种。<br>young = parallel，多个thread同时copy<br>old = mark-sweep-compact = 1<br>优点：新生代回收更快。因为系统大部分时间做的gc都是新生代的，这样提高了throughput(cpu用于非gc时间)<br>缺点：当运行在8G/16G server上old generation live object太多时候pause time过长</p>
+</blockquote>
+<blockquote>
+<p>Parallel Compact Collector (ParallelOld)<br>young = parallel = 2<br>old = parallel，分成多个独立的单元，如果单元中live object少则回收，多则跳过<br>优点：old old generation上性能较 parallel 方式有提高<br>缺点：大部分server系统old generation内存占用会达到60%-80%, 没有那么多理想的单元live object很少方便迅速回收，同时compact方面开销比起parallel并没明显减少。</p>
+</blockquote>
+<blockquote>
+<p>Concurrent Mark-Sweep(CMS) Collector<br>young generation = parallel collector = 2<br>old = cms<br>同时不做 compact 操作。<br>优点：pause time会降低, pause敏感但CPU有空闲的场景需要建议使用策略4.<br>缺点：cpu占用过多，cpu密集型服务器不适合。另外碎片太多，每个object的存储都要通过链表连续跳n个地方，空间浪费问题也会增大。</p>
+</blockquote>
+<h4 id="内存监控方法"><a href="#内存监控方法" class="headerlink" title="内存监控方法"></a>内存监控方法</h4><p>jmap -heap 查看java 堆（heap）使用情况</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">jmap -heap pid </span><br><span class="line">  </span><br><span class="line">using thread-local object allocation.</span><br><span class="line">  </span><br><span class="line">Parallel GC with 4 thread(s)   <span class="comment">#GC 方式</span></span><br><span class="line">  </span><br><span class="line">Heap Configuration:  <span class="comment">#堆内存初始化配置</span></span><br><span class="line">  </span><br><span class="line">MinHeapFreeRatio=40  <span class="comment">#对应jvm启动参数-XX:MinHeapFreeRatio设置JVM堆最小空闲比率(default 40)</span></span><br><span class="line">MaxHeapFreeRatio=70  <span class="comment">#对应jvm启动参数 -XX:MaxHeapFreeRatio设置JVM堆最大空闲比率(default 70)</span></span><br><span class="line">MaxHeapSize=512.0MB  <span class="comment">#对应jvm启动参数-XX:MaxHeapSize=设置JVM堆的最大大小</span></span><br><span class="line">NewSize  = 1.0MB     <span class="comment">#对应jvm启动参数-XX:NewSize=设置JVM堆的‘新生代’的默认大小</span></span><br><span class="line">MaxNewSize =4095MB   <span class="comment">#对应jvm启动参数-XX:MaxNewSize=设置JVM堆的‘新生代’的最大大小</span></span><br><span class="line">OldSize  = 4.0MB     <span class="comment">#对应jvm启动参数-XX:OldSize=&lt;value&gt;:设置JVM堆的‘老生代’的大小</span></span><br><span class="line">NewRatio  = 8        <span class="comment">#对应jvm启动参数-XX:NewRatio=:‘新生代’和‘老生代’的大小比率</span></span><br><span class="line">SurvivorRatio = 8    <span class="comment">#对应jvm启动参数-XX:SurvivorRatio=设置年轻代中Eden区与Survivor区的大小比值</span></span><br><span class="line">PermSize= 16.0MB     <span class="comment">#对应jvm启动参数-XX:PermSize=&lt;value&gt;:设置JVM堆的‘永生代’的初始大小</span></span><br><span class="line">MaxPermSize=64.0MB   <span class="comment">#对应jvm启动参数-XX:MaxPermSize=&lt;value&gt;:设置JVM堆的‘永生代’的最大大小</span></span><br><span class="line">  </span><br><span class="line">Heap Usage:          <span class="comment">#堆内存分步</span></span><br><span class="line">  </span><br><span class="line">PS Young Generation</span><br><span class="line">  </span><br><span class="line">Eden Space:         <span class="comment">#Eden区内存分布</span></span><br><span class="line">  </span><br><span class="line">capacity = 20381696 (19.4375MB)             <span class="comment">#Eden区总容量</span></span><br><span class="line">used     = 20370032 (19.426376342773438MB)  <span class="comment">#Eden区已使用</span></span><br><span class="line">free     = 11664 (0.0111236572265625MB)     <span class="comment">#Eden区剩余容量</span></span><br><span class="line">99.94277218147106% used                     <span class="comment">#Eden区使用比率</span></span><br><span class="line">  </span><br><span class="line">From Space:        <span class="comment">#其中一个Survivor区的内存分布</span></span><br><span class="line">  </span><br><span class="line">capacity = 8519680 (8.125MB)</span><br><span class="line">used     = 32768 (0.03125MB)</span><br><span class="line">free     = 8486912 (8.09375MB)</span><br><span class="line">0.38461538461538464% used</span><br><span class="line">  </span><br><span class="line">To Space:          <span class="comment">#另一个Survivor区的内存分布</span></span><br><span class="line">  </span><br><span class="line">capacity = 9306112 (8.875MB)</span><br><span class="line">used     = 0 (0.0MB)</span><br><span class="line">free     = 9306112 (8.875MB)</span><br><span class="line">0.0% used</span><br><span class="line">  </span><br><span class="line">PS Old Generation  <span class="comment">#当前的Old区内存分布</span></span><br><span class="line">  </span><br><span class="line">capacity = 366280704 (349.3125MB)</span><br><span class="line">used     = 322179848 (307.25464630126953MB)</span><br><span class="line">free     = 44100856 (42.05785369873047MB)</span><br><span class="line">87.95982001825573% used</span><br><span class="line">   </span><br><span class="line">PS Perm Generation <span class="comment">#当前的 “永生代” 内存分布</span></span><br><span class="line">  </span><br><span class="line">capacity = 32243712 (30.75MB)</span><br><span class="line">used     = 28918584 (27.57891082763672MB)</span><br><span class="line">free     = 3325128 (3.1710891723632812MB)</span><br><span class="line">89.68751488662348% used</span><br></pre></td></tr></table></figure>
+<h4 id="jmap-相关命令"><a href="#jmap-相关命令" class="headerlink" title="jmap 相关命令"></a>jmap 相关命令</h4><blockquote>
+<p>jmap [ option ] pid  (to connect to remote debug server)<br>jmap [ option ] executable core  (to connect to remote debug server)<br>jmap [ option ] [server-id@]remote-hostname-or-IP  (to connect to remote debug server)</p>
+</blockquote>
+<p>[option] is one of:   </p>
+<ul>
+<li>[none]     </li>
+<li>-heap     </li>
+<li>-histo[:live]        </li>
+<li>-permstat        </li>
+<li>-finalizerinfo      </li>
+<li>-dump:[dump-options]<br>[dump-options]:  </li>
+<li>live                            </li>
+<li>format=b  </li>
+<li>file=<file>     </li>
+</ul>
+<p>jmap -dump:live,format=b,file=heap.bin <pid>                 </p>
+<p>参数如下：<br>-heap：打印jvm heap的情况<br>-histo：打印jvm heap的直方图。其输出信息包括类名，对象数量，对象占用大小。<br>-histo：live ：同上，但是只答应存活对象的情况<br>-permstat：打印permanent generation heap情况</p>
+<blockquote>
+<ul>
+<li>jmap -histo:live pid&gt;a.log<br>可以观察heap中所有对象的情况（heap中所有生存的对象的情况）。包括对象数量和所占空间大小。 可以将其保存到文本中去，在一段时间后，使用文本对比工具，可以对比出GC回收了哪些对象。<br>jmap -histo:live 这个命令执行，JVM会先触发gc，然后再统计信息。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>jmap -dump:live,format=b,file=a.log pid<br>JVM会将整个heap的信息dump写入到一个文件，heap如果比较大的话，就会导致这个过程比较耗时，并且执行的过程中为了保证dump的信息是可靠的，所以会暂停应用。</li>
+</ul>
+</blockquote>
+<h4 id="cache内存回收"><a href="#cache内存回收" class="headerlink" title="cache内存回收"></a>cache内存回收</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> 1 &gt;/proc/sys/vm/drop_caches</span><br><span class="line"><span class="built_in">echo</span> 2 &gt;/proc/sys/vm/drop_caches</span><br><span class="line"><span class="built_in">echo</span> 3 &gt;/proc/sys/vm/drop_caches</span><br></pre></td></tr></table></figure>
+<p><a href="/img/jvm%E5%86%85%E5%AD%98%E7%9B%91%E6%8E%A7.txt">java实现jvm监控</a></p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2019/02/15/ORACLE-temp/" style="float: left;">
+        ← ORACLE临时表空间
+    </a>
+    
+    
+    <a class="pull-right" href="/2018/12/28/Oracle-log/">
+        Oracle 日志 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By niuwenhui. All Rights Reserved.
+                </p>
+                <p>Theme By  Kieran </p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+            <style>
+.local-search-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: rgba(255, 255, 255, .9);
+  color: #333;
+  z-index: 9999;
+  border-radius: 5px;
+  overflow: scroll;
+}
+#local-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #151515;
+  background-color: initial;
+}
+.search-result-list {
+  list-style: none;
+  padding-left: 0;
+}
+.search-result-list > li {
+  margin-top: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: all ease .3s;
+}
+.search-result-list > li:hover {
+  border-bottom: 1px solid gray;
+}
+.search-result-title {
+  font-size: 16px;
+}
+.search-result {
+  line-height: 20px;
+}
+.search-keyword {
+  font-weight: normal;
+  color: #c00;
+}
+
+@media (min-width: 890px) {
+  .popup-btn-close {
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    border: 1px solid #151515;
+    padding: 0px 10px;
+    border-top-left-radius: 8px;
+    cursor: pointer;
+    transition: all ease .3s;
+  }
+  .popup-btn-close:hover {
+    background: #151515;
+    opacity: .9;
+    color: #fff;
+  }
+}
+@media (max-width: 890px) {
+  .popup-btn-close {
+    font-size: 0;
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px #888;
+    cursor: pointer;
+  }
+  .popup-btn-close::after {
+    content: '←';
+    color: #151515;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+</style>
+
+<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="local-search-header clearfix">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+          <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+        </div>
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/ziploader.js"></script>
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // get search zip version
+    $.get('/searchVersion.txt?t=' + (+new Date()), function(res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson () {
+      initLoad(['/search.zip'], {
+        loadOptions: {
+          success: function(obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function(e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions:{
+          'json':'application/json'
+        }
+      })
+    }
+
+
+    // search function;
+    var searchFunc = function(search_id, content_id) {
+      'use strict';
+
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function() {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function(data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title ? data.title.trim() : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content ? data.content.trim().replace(/<[^>]+>/g,"") : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function(keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0, position = [], index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+
+            // show search results
+
+            if (isMatch) {
+              // sort index by position of keyword
+
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+
+              // merge hits into slices
+
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+
+                  // move to next position of hit
+
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {
+                  hits: hits,
+                  start: start,
+                  end: end,
+                  searchTextCount: searchTextCountInSlice
+                };
+              }
+
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if(start < 0){
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if(end > content.length){
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+
+              // sort slices in content by search text's count and hits' count
+
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+
+              // select top N slices in content
+
+              var upperBound = parseInt('2');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+
+              // highlight title and content
+
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+
+              var resultItem = '';
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+              } else {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+              }
+
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "'>" +
+                  "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                  "...</p>" + "</a>";
+              });
+
+              resultItem += "</li>";
+              resultItems.push({
+                item: resultItem,
+                searchTextCount: searchTextCount,
+                hitCount: hitCount,
+                id: resultItems.length
+              });
+            }
+          })
+        };
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<ul class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</ul>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+
+      // remove loading animation
+      $('body').css('overflow', '');
+
+      proceedsearch();
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        $('.sb-close').click();
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+      
+</body>
+</html>

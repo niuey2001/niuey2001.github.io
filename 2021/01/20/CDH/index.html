@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>CDH 5.13 搭建 | WENHUI`S BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="WENHUI`S BLOG">
+    <meta name="author" content="niuwenhui">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="WENHUI`S BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/工作学习/" class="animsition-link">工作学习<small>(18)</small></a></li>
+				    
+				    <li><a href="/categories/读书/" class="animsition-link">读书<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/项目/" class="animsition-link">项目<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="https://niuey2001.github.io" class="animsition-link">xiaoniu</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="https://fastly.jsdelivr.net/gh/niuey2001/rs@5.0/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">WENHUI`S BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2021-01-20T08:05:49.000Z" itemprop="datePublished">
+          2021-01-20
+      </time>
+    
+    
+    | 
+    <a href='/tags/大数据/'>大数据</a>
+    
+    
+</span>
+                <h1>CDH 5.13 搭建</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<blockquote>
+<p> 记录一次 Cloudera’s Distribution Including Apache Hadoop平台搭建过程。<br>    基本模拟生产环境用于日常测试</p>
+</blockquote>
+<hr>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
+<li>操作系统：vm环境下新建3台 centos 7.5 （最小安装）虚机<ul>
+<li>cdh01 (主节点) ：内存 6G（不能更少）、硬盘 40G </li>
+<li>cdh02 ：内存 2G 、硬盘 40G</li>
+<li>cdh03 ：内存 2G 、硬盘 40G</li>
+</ul>
+</li>
+<li>安装文件列表<ul>
+<li><a target="_blank" rel="noopener" href="http://archive.cloudera.com/cm5/cm/5/cloudera-manager-centos7-cm5.13.0_x86_64.tar.gz">cloudera-manager-centos7-cm5.13.0_x86_64.tar.gz</a> </li>
+<li><a target="_blank" rel="noopener" href="http://archive.cloudera.com/cdh5/parcels/5.13.0/CDH-5.13.0-1.cdh5.13.0.p0.29-el7.parcel">CDH-5.13.0-1.cdh5.13.0.p0.29-el7.parcel</a></li>
+<li><a target="_blank" rel="noopener" href="http://archive.cloudera.com/cdh5/parcels/5.13.0/CDH-5.13.0-1.cdh5.13.0.p0.29-el7.parcel.sha1">CDH-5.13.0-1.cdh5.13.0.p0.29-el7.parcel.sha1</a></li>
+<li><a href="">manifest.json</a></li>
+<li><a target="_blank" rel="noopener" href="http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-x64.tar.gz">jdk-8u144-linux-x64.tar.gz</a></li>
+<li><a target="_blank" rel="noopener" href="https://cdn.mysql.com/archives/mysql-5.7/mysql-5.7.21-1.el7.x86_64.rpm-bundle.tar">mysql-5.7.21-1.el7.x86_64.rpm-bundle.tar</a></li>
+<li><a target="_blank" rel="noopener" href="https://cdn.mysql.com/archives/mysql-connector-java-5.1/mysql-connector-java-5.1.47.tar.gz">mysql-connector-java-5.1.47.tar.gz</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="环境实施"><a href="#环境实施" class="headerlink" title="环境实施"></a>环境实施</h3><ul>
+<li>虚拟机搭建<br>&emsp;  vmware新建虚拟机比较简单步骤省略。这部分重点记录下网络环境配置信息，因为本地局域网IP不固定，所以我们采用NAT模式配置虚拟机网络 （采用桥接模式直接连接，因为我们IP必须固定，可能导致和局域网其它服务器IP冲突等异常），NAT模式配置如下：<ul>
+<li>网络规划 ：网段（192.168.64.0） 、网关（192.168.64.1）、3台虚拟机IP (192.168.64.101/102/103)</li>
+<li>修改物理机vmnet8配置： ip: 192.168.64.2、掩码:255.255.255.0、网关:192.168.64.1</li>
+<li>修改vmware网络：编辑 -》虚拟网络编辑-》更改设置-》vmnet8  -》子网IP: 192.168.64.0 、子网掩码：255.255.255.0  -》NAT设置-》网关IP：192.168.64.1</li>
+<li>修改虚拟机网络：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-ens33</span><br><span class="line"><span class="comment">##vi begin</span></span><br><span class="line">TYPE=Ethernet</span><br><span class="line">PROXY_METHOD=none</span><br><span class="line">BROWSER_ONLY=no</span><br><span class="line">BOOTPROTO=static</span><br><span class="line">DEFROUTE=yes</span><br><span class="line">IPV4_FAILURE_FATAL=no</span><br><span class="line">IPV6INIT=yes</span><br><span class="line">IPV6_AUTOCONF=yes</span><br><span class="line">IPV6_DEFROUTE=yes</span><br><span class="line">IPV6_FAILURE_FATAL=no</span><br><span class="line">IPV6_ADDR_GEN_MODE=stable-privacy</span><br><span class="line">NAME=ens33</span><br><span class="line">UUID=ba0197c3-ef17-41d8-b41c-fbfd12c30b4f</span><br><span class="line">DEVICE=ens33</span><br><span class="line">ONBOOT=yes</span><br><span class="line"></span><br><span class="line">IPADDR=192.168.64.101</span><br><span class="line">PREFIX=24</span><br><span class="line">GATEWAY=192.168.64.1</span><br><span class="line">DNS1=114.114.114.114</span><br><span class="line"><span class="comment">##vi end</span></span><br><span class="line">service network restart</span><br></pre></td></tr></table></figure></li>
+<li>修改虚拟机hostname、  /etc/hosts 、修改selinux、关闭防火墙<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">hostnamectl set-hostname cdh01</span><br><span class="line">hostnamectl set-hostname cdh02</span><br><span class="line">hostnamectl set-hostname cdh03</span><br><span class="line">vi /etc/hosts</span><br><span class="line"><span class="comment">##/etc/hosts</span></span><br><span class="line">cdh01 192.168.64.101</span><br><span class="line">cdh02 192.168.64.102</span><br><span class="line">cdh03 192.168.64.103</span><br><span class="line"><span class="comment">##selinux</span></span><br><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br><span class="line"><span class="comment">##firewalld</span></span><br><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br><span class="line">systemctl status firewalld</span><br></pre></td></tr></table></figure></li>
+<li>ssh互信 (把3台机器的id_rsa.pub放一起，分发到3台机器上)<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br><span class="line"><span class="built_in">cd</span> /root/.ssh</span><br><span class="line">cat id_rsa.pub &gt;&gt; authorized_keys</span><br><span class="line">scp  authorized_keys cdh02:/root/.ssh</span><br></pre></td></tr></table></figure></li>
+<li>配置ntp<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##安装ntp服务（所有节点）</span></span><br><span class="line">yum install -y ntp </span><br><span class="line"><span class="comment">##主节点(cdh01)配置</span></span><br><span class="line">vi /etc/ntp.conf </span><br><span class="line"></span><br><span class="line"><span class="comment"># the administrative functions.</span></span><br><span class="line">restrict 127.0.0.1 </span><br><span class="line">restrict ::1</span><br><span class="line">​</span><br><span class="line"><span class="comment"># Hosts on local network are less restricted.</span></span><br><span class="line"><span class="comment">#restrict 192.168.1.0 mask 255.255.255.0 nomodify notrap</span></span><br><span class="line">​</span><br><span class="line"><span class="comment"># Use public servers from the pool.ntp.org project.</span></span><br><span class="line"><span class="comment"># Please consider joining the pool (http://www.pool.ntp.org/join.html).</span></span><br><span class="line"><span class="comment"># server 0.centos.pool.ntp.org iburst</span></span><br><span class="line"><span class="comment"># server 1.centos.pool.ntp.org iburst</span></span><br><span class="line"><span class="comment"># server 2.centos.pool.ntp.org iburst</span></span><br><span class="line"><span class="comment"># server 3.centos.pool.ntp.org iburst</span></span><br><span class="line"><span class="comment"># 192.168.64.101 作为server</span></span><br><span class="line">server 127.127.1.0</span><br><span class="line">Fudge 127.127.1.0 stratum 10</span><br><span class="line">​</span><br><span class="line"><span class="comment">##其它节点</span></span><br><span class="line">vi /etc/ntp.conf</span><br><span class="line"><span class="comment"># the administrative functions.</span></span><br><span class="line">restrict 192.168.64.101 nomodify notrap nopeer noquery</span><br><span class="line">restrict 127.0.0.1</span><br><span class="line">restrict ::1</span><br><span class="line"><span class="comment"># Hosts on local network are less restricted.</span></span><br><span class="line"><span class="comment">#restrict 192.168.1.0 mask 255.255.255.0 nomodify notrap</span></span><br><span class="line">​</span><br><span class="line"><span class="comment"># Use public servers from the pool.ntp.org project.</span></span><br><span class="line"><span class="comment"># Please consider joining the pool (http://www.pool.ntp.org/join.html).</span></span><br><span class="line"><span class="comment"># server 0.centos.pool.ntp.org iburst</span></span><br><span class="line"><span class="comment"># server 1.centos.pool.ntp.org iburst</span></span><br><span class="line"><span class="comment"># server 2.centos.pool.ntp.org iburst</span></span><br><span class="line"><span class="comment"># server 3.centos.pool.ntp.org iburst</span></span><br><span class="line"><span class="comment"># 172.28.52.66-172.18.12.69 作为client</span></span><br><span class="line">server 192.168.64.101</span><br><span class="line">Fudge 192.168.64.101 stratum 10</span><br><span class="line"><span class="comment">##启动ntp服务</span></span><br><span class="line">systemctl <span class="built_in">disable</span> chronyd.service</span><br><span class="line">systemctl <span class="built_in">enable</span> ntpd.service</span><br><span class="line">systemctl start ntpd </span><br><span class="line">ntpstat </span><br><span class="line"><span class="comment">#ntpdate -u  ntp.aliyun.com</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>安装jdk <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##卸载原有JDK，如果有的话</span></span><br><span class="line">rpm -qa | grep jdk </span><br><span class="line">yum remove -y *jdk*</span><br><span class="line">yum remove -y *java*</span><br><span class="line"> tar xzvf jdk-8u144-linux-x64.tar.gz</span><br><span class="line">mv jdk1.8.0_144 /usr/java</span><br><span class="line">vi  /etc/profile</span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/java/jdk1.8.0_144</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:<span class="variable">$JAVA_HOME</span>/lib/tools.jar</span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br><span class="line">java -version</span><br></pre></td></tr></table></figure></li>
+<li>安装mysql （主节点）<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">yum install net-tools <span class="comment">#安装net-tools包，在之前配置网络的时候也需要安装</span></span><br><span class="line">yum install perl <span class="comment">#安装perl包</span></span><br><span class="line">tar -xf mysql-5.7.21-1.el7.x86_64.rpm-bundle.tar</span><br><span class="line"><span class="comment">##按顺序安装下面rpm</span></span><br><span class="line">rpm -ivh mysql-community-common-5.7.21-1.el7.x86_64.rpm</span><br><span class="line">rpm -ivh mysql-community-libs-5.7.21-1.el7.x86_64.rpm</span><br><span class="line">rpm -ivh mysql-community-client-5.7.21-1.el7.x86_64.rpm</span><br><span class="line">rpm -ivh mysql-community-server-5.7.21-1.el7.x86_64.rpm</span><br><span class="line">rpm -ivh mysql-community-libs-compat-5.7.21-1.el7.x86_64.rpm</span><br><span class="line">rpm -ivh mysql-community-devel-5.7.21-1.el7.x86_64.rpm</span><br><span class="line">systemctl start mysqld</span><br><span class="line">systemctl <span class="built_in">enable</span> mysqld</span><br><span class="line">systemctl daemon-reload</span><br><span class="line"><span class="comment">#查看原始root密码</span></span><br><span class="line">cat /var/<span class="built_in">log</span>/mysqld.log |grep password </span><br><span class="line">mysql -uroot –p</span><br><span class="line"><span class="built_in">set</span> global validate_password_policy=0;</span><br><span class="line"><span class="built_in">set</span> global validate_password_length=2;</span><br><span class="line"><span class="built_in">set</span> global validate_password_special_char_count=0;</span><br><span class="line"><span class="built_in">set</span> global validate_password_mixed_case_count=0;</span><br><span class="line"><span class="built_in">set</span> global validate_password_number_count=0;</span><br><span class="line"><span class="built_in">set</span> password = password(<span class="string">&#x27;123&#x27;</span>);</span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;%&#x27;</span> IDENTIFIED BY <span class="string">&#x27;123&#x27;</span> WITH GRANT OPTION;</span><br><span class="line">flush privileges;</span><br><span class="line"><span class="comment">##执行下面的建库脚本</span></span><br><span class="line">create database metastore default character <span class="built_in">set</span> utf8;</span><br><span class="line">CREATE USER <span class="string">&#x27;hive&#x27;</span>@<span class="string">&#x27;%&#x27;</span> IDENTIFIED BY <span class="string">&#x27;hive&#x27;</span>;</span><br><span class="line">GRANT ALL PRIVILEGES ON metastore. * TO <span class="string">&#x27;hive&#x27;</span>@<span class="string">&#x27;%&#x27;</span>;</span><br><span class="line">create database hive default character <span class="built_in">set</span> utf8;</span><br><span class="line">GRANT ALL PRIVILEGES ON hive. * TO <span class="string">&#x27;hive&#x27;</span>@<span class="string">&#x27;%&#x27;</span>;</span><br><span class="line">create database cm default character <span class="built_in">set</span> utf8;</span><br><span class="line">CREATE USER <span class="string">&#x27;cm&#x27;</span>@<span class="string">&#x27;%&#x27;</span> IDENTIFIED BY <span class="string">&#x27;cm&#x27;</span>;</span><br><span class="line">GRANT ALL PRIVILEGES ON cm.* TO <span class="string">&#x27;cm&#x27;</span>@<span class="string">&#x27;%&#x27;</span>;</span><br><span class="line">create database am default character <span class="built_in">set</span> utf8;</span><br><span class="line">CREATE USER <span class="string">&#x27;am&#x27;</span>@<span class="string">&#x27;%&#x27;</span> IDENTIFIED BY <span class="string">&#x27;am&#x27;</span>;</span><br><span class="line">GRANT ALL PRIVILEGES ON am. * TO <span class="string">&#x27;am&#x27;</span>@<span class="string">&#x27;%&#x27;</span>;</span><br><span class="line">create database rm default character <span class="built_in">set</span> utf8;</span><br><span class="line">CREATE USER <span class="string">&#x27;rm&#x27;</span>@<span class="string">&#x27;%&#x27;</span> IDENTIFIED BY <span class="string">&#x27;rm&#x27;</span>;</span><br><span class="line">GRANT ALL PRIVILEGES ON rm. * TO <span class="string">&#x27;rm&#x27;</span>@<span class="string">&#x27;%&#x27;</span>;</span><br><span class="line">create database hue default character <span class="built_in">set</span> utf8;</span><br><span class="line">CREATE USER <span class="string">&#x27;hue&#x27;</span>@<span class="string">&#x27;%&#x27;</span> IDENTIFIED BY <span class="string">&#x27;hue&#x27;</span>;</span><br><span class="line">GRANT ALL PRIVILEGES ON hue. * TO <span class="string">&#x27;hue&#x27;</span>@<span class="string">&#x27;%&#x27;</span>;</span><br><span class="line">create database oozie default character <span class="built_in">set</span> utf8;</span><br><span class="line">CREATE USER <span class="string">&#x27;oozie&#x27;</span>@<span class="string">&#x27;%&#x27;</span> IDENTIFIED BY <span class="string">&#x27;oozie&#x27;</span>;</span><br><span class="line">GRANT ALL PRIVILEGES ON oozie. * TO <span class="string">&#x27;oozie&#x27;</span>@<span class="string">&#x27;%&#x27;</span>;</span><br><span class="line">grant all privileges on *.* to <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;cdh01&#x27;</span> identified by <span class="string">&#x27;123&#x27;</span> with grant option;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure></li>
+<li>安装cm<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf cloudera-manager-centos7-cm5.13.0_x86_64.tar.gz</span><br><span class="line">tar zxvf  mysql-connector-java-5.1.47.tar.gz</span><br><span class="line">cp /opt/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47-bin.jar /usr/java/</span><br><span class="line">cp /opt/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47-bin.jar /opt/cm-5.13.0/share/cmf/lib/</span><br><span class="line"><span class="comment">##主节点执行</span></span><br><span class="line">/opt/cm-5.13.0/share/cmf/schema/scm_prepare_database.sh mysql -uroot -p123 scm scm scm</span><br><span class="line">vi /opt/cm-5.13.0/etc/cloudera-scm-agent/config.ini</span><br><span class="line">server_host=cdh01</span><br><span class="line">scp -r /opt/cm-5.13.0/ chd02:/opt/</span><br><span class="line">scp -r /opt/cm-5.13.0/ chd03:/opt/</span><br><span class="line"><span class="comment">##所有节点执行</span></span><br><span class="line">useradd --system --home=/opt/cm-5.13.0/run/cloudera-scm-server/ --no-create-home --shell=/bin/<span class="literal">false</span> --comment <span class="string">&quot;Cloudera SCM User&quot;</span> cloudera-scm</span><br><span class="line"><span class="comment">##主节点 /opt/cloudera/parcel-repo/目录下拷贝下面文件</span></span><br><span class="line">CDH-5.13.0-1.cdh5.13.0.p0.29-el7.parcel.sha1</span><br><span class="line">manifest.json</span><br><span class="line">CDH-5.13.0-1.cdh5.13.0.p0.29-el7.parcel</span><br><span class="line"><span class="comment">##修改sha文件名</span></span><br><span class="line">mv  CDH-5.13.0-1.cdh5.13.0.p0.29-el7.parcel.sha1 CDH-5.13.0-1.cdh5.13.0.p0.29-el7.parcel.sha</span><br><span class="line"><span class="comment">##主节点启动 server</span></span><br><span class="line">/opt/cm-5.13.0/etc/init.d/cloudera-scm-server start</span><br><span class="line"><span class="comment">##主节点及其它节点启动 agent</span></span><br><span class="line">/opt/cm-5.13.0/etc/init.d/cloudera-scm-agent start</span><br><span class="line"><span class="comment">## 启动需要点时间，可以查看数据库scm中的hosts表，如果里面出现节点信息表示server启动完成</span></span><br></pre></td></tr></table></figure></li>
+<li>Hadoop集群安装<ul>
+<li>访问浏览器地址: <a target="_blank" rel="noopener" href="http://cdh01:7180/">http://cdh01:7180</a> (admin/admin) </li>
+<li>选择 Cloudera Express版本 </li>
+<li>选择主机(cdh01、cdh02、chd03)</li>
+<li>选择集群版本 （cdh-5.13）</li>
+<li>服务器检测，遇到警告执行 ：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> 10 &gt; /proc/sys/vm/swappiness </span><br><span class="line"><span class="built_in">echo</span> never &gt;/sys/kernel/mm/transparent_hugepage/defrag </span><br><span class="line"><span class="built_in">echo</span> never &gt; /sys/kernel/mm/transparent_hugepage/enabled</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>自定义服务安装 参考生产环境 <ul>
+<li>HDFS </li>
+<li>HIVE</li>
+<li> HUE</li>
+<li> IMPALA</li>
+<li> OOZIE</li>
+<li> SPARK</li>
+<li> SQOOP</li>
+<li> YARN</li>
+<li> ZOOKPPER</li>
+</ul>
+</li>
+<li>集群数据库设置<ul>
+<li>数据库主机：cdh01 </li>
+<li>数据库类型：MySql </li>
+<li>数据库名称分别对应:hive 、oozie、hue等，hue测试连接可能会有ERROR，处理方法见后面。</li>
+</ul>
+</li>
+</ul>
+<h3 id="其它配置及问题汇总"><a href="#其它配置及问题汇总" class="headerlink" title="其它配置及问题汇总"></a>其它配置及问题汇总</h3><ul>
+<li>扩展虚拟机目录<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vmware虚拟机设置-》扩展</span><br><span class="line">fdisk /dev/sda </span><br><span class="line"><span class="comment">##分区之后可能需要重启才能在/dev下看到</span></span><br><span class="line">pvcreate /dev/sda3</span><br><span class="line">vgextend /dev/sda3 centos</span><br><span class="line">lvextend -L +19G /dev/centos/root</span><br><span class="line">xfs_growfs /dev/centos/root</span><br></pre></td></tr></table></figure></li>
+<li>修改本地yum源<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">挂载光盘(本例使用)</span><br><span class="line">mount -t iso9660 /dev/cdrom /mnt/cdrom</span><br><span class="line">挂载镜像</span><br><span class="line">mount -o loop /tmp/linux.iso  /mnt/linux</span><br><span class="line">挂载软盘</span><br><span class="line">mount /dev/fd0 /mnt/floppy</span><br><span class="line">vi /etc/yum.repos.d/CentOS-Base.repo</span><br><span class="line">baseurl=file:///mnt/cdrom</span><br><span class="line">gpgcheck=0</span><br><span class="line">enabled=1</span><br></pre></td></tr></table></figure></li>
+<li>ERROR1 Error: Rpmdb checksum is invalid: pkg checksums<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum clean all</span><br><span class="line">yum makecache</span><br><span class="line">yum list installed</span><br></pre></td></tr></table></figure></li>
+<li>ERROR2 /opt/cm-5.16.2/etc/init.d/cloudera-scm-agent:行109: pstree: 未找到命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y psmisc</span><br></pre></td></tr></table></figure></li>
+<li>ERROR3 + echo ‘Failed to find the Apache HTTPD executable.’<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install httpd</span><br></pre></td></tr></table></figure></li>
+<li>ERROR4  Could not start SASL: Error in sasl_client_start (-4) SASL(-4): no mechanism available: No worthy mechs found<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install cyrus-sasl-plain  cyrus-sasl-devel  cyrus-sasl-gssapi</span><br></pre></td></tr></table></figure></li>
+<li>ERROR5  /opt/cm-5.11.0/lib64/cmf/service/client/deploy-cc.sh: line 115: perl: command not found<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y perl</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2021/01/26/mem/" style="float: left;">
+        ← Memory Leak
+    </a>
+    
+    
+    <a class="pull-right" href="/2021/01/05/Sqlparse/">
+        Sqlparse →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By niuwenhui. All Rights Reserved.
+                </p>
+                <p>Theme By  Kieran </p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+            <style>
+.local-search-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: rgba(255, 255, 255, .9);
+  color: #333;
+  z-index: 9999;
+  border-radius: 5px;
+  overflow: scroll;
+}
+#local-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #151515;
+  background-color: initial;
+}
+.search-result-list {
+  list-style: none;
+  padding-left: 0;
+}
+.search-result-list > li {
+  margin-top: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: all ease .3s;
+}
+.search-result-list > li:hover {
+  border-bottom: 1px solid gray;
+}
+.search-result-title {
+  font-size: 16px;
+}
+.search-result {
+  line-height: 20px;
+}
+.search-keyword {
+  font-weight: normal;
+  color: #c00;
+}
+
+@media (min-width: 890px) {
+  .popup-btn-close {
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    border: 1px solid #151515;
+    padding: 0px 10px;
+    border-top-left-radius: 8px;
+    cursor: pointer;
+    transition: all ease .3s;
+  }
+  .popup-btn-close:hover {
+    background: #151515;
+    opacity: .9;
+    color: #fff;
+  }
+}
+@media (max-width: 890px) {
+  .popup-btn-close {
+    font-size: 0;
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px #888;
+    cursor: pointer;
+  }
+  .popup-btn-close::after {
+    content: '←';
+    color: #151515;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+</style>
+
+<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="local-search-header clearfix">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+          <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+        </div>
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/ziploader.js"></script>
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // get search zip version
+    $.get('/searchVersion.txt?t=' + (+new Date()), function(res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson () {
+      initLoad(['/search.zip'], {
+        loadOptions: {
+          success: function(obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function(e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions:{
+          'json':'application/json'
+        }
+      })
+    }
+
+
+    // search function;
+    var searchFunc = function(search_id, content_id) {
+      'use strict';
+
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function() {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function(data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title ? data.title.trim() : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content ? data.content.trim().replace(/<[^>]+>/g,"") : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function(keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0, position = [], index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+
+            // show search results
+
+            if (isMatch) {
+              // sort index by position of keyword
+
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+
+              // merge hits into slices
+
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+
+                  // move to next position of hit
+
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {
+                  hits: hits,
+                  start: start,
+                  end: end,
+                  searchTextCount: searchTextCountInSlice
+                };
+              }
+
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if(start < 0){
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if(end > content.length){
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+
+              // sort slices in content by search text's count and hits' count
+
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+
+              // select top N slices in content
+
+              var upperBound = parseInt('2');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+
+              // highlight title and content
+
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+
+              var resultItem = '';
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+              } else {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+              }
+
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "'>" +
+                  "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                  "...</p>" + "</a>";
+              });
+
+              resultItem += "</li>";
+              resultItems.push({
+                item: resultItem,
+                searchTextCount: searchTextCount,
+                hitCount: hitCount,
+                id: resultItems.length
+              });
+            }
+          })
+        };
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<ul class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</ul>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+
+      // remove loading animation
+      $('body').css('overflow', '');
+
+      proceedsearch();
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        $('.sb-close').click();
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+      
+</body>
+</html>
