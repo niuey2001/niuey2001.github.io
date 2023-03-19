@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Oracle 日志 | WENHUI`S BLOG</title>
+  <title>Oracle | WENHUI`S BLOG</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -80,9 +80,9 @@
         		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
-				    <li><a href="/categories/工作学习/" class="animsition-link">工作学习<small>(18)</small></a></li>
+				    <li><a href="/categories/工作学习/" class="animsition-link">工作学习<small>(17)</small></a></li>
 				    
-				    <li><a href="/categories/读书/旅游/" class="animsition-link">旅游<small>(1)</small></a></li>
+				    <li><a href="/categories/读书/旅游/" class="animsition-link">旅游<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/读书/" class="animsition-link">读书<small>(5)</small></a></li>
 				    
@@ -183,7 +183,7 @@
     
     
 </span>
-                <h1>Oracle 日志</h1>
+                <h1>Oracle</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
@@ -201,6 +201,8 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select log_mode,force_logging from v<span class="variable">$database</span>;</span><br><span class="line">alter database force  logging;     </span><br><span class="line">insert /*+append parallel(32)*/ into tab nologging </span><br></pre></td></tr></table></figure>
 <p>最小附加日志（minimal supplemental logging）</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alter database &#123;add|drop&#125; supplemental <span class="built_in">log</span> data;</span><br><span class="line">alter table <span class="built_in">test</span> drop supplemental <span class="built_in">log</span> data(all,primary key,unique,foreign key) columns;</span><br><span class="line">select * from v<span class="variable">$flash_recovery_area_usage</span>;</span><br><span class="line">DELETE  noprompt ARCHIVELOG ALL COMPLETED BEFORE <span class="string">&#x27;SYSDATE-3&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="tablespace"><a href="#tablespace" class="headerlink" title="tablespace"></a>tablespace</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">alter tablespace test offline;</span><br><span class="line">cp datafile  newdatafile;</span><br><span class="line">alter tablespace test rename datafile datafile to newdatafile</span><br><span class="line">alter tablespace test online;</span><br><span class="line">ora-01113 文件10 需要介质修复，输入语句：recover datafile 10;</span><br></pre></td></tr></table></figure>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
