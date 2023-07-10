@@ -82,9 +82,9 @@
 				  	
 				    <li><a href="/categories/工作学习/" class="animsition-link">工作学习<small>(17)</small></a></li>
 				    
-				    <li><a href="/categories/读书/旅游/" class="animsition-link">旅游<small>(4)</small></a></li>
+				    <li><a href="/categories/读书/旅游/" class="animsition-link">旅游<small>(5)</small></a></li>
 				    
-				    <li><a href="/categories/读书/" class="animsition-link">读书<small>(7)</small></a></li>
+				    <li><a href="/categories/读书/" class="animsition-link">读书<small>(8)</small></a></li>
 				    
 				    <li><a href="/categories/项目/" class="animsition-link">项目<small>(1)</small></a></li>
 				    
@@ -201,6 +201,55 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2021/01/26/mem/">Memory Leak</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-01-26T09:56:28.000Z" itemprop="datePublished">
+          2021-01-26
+      </time>
+    
+    
+    | 
+    <a href='/tags/java/'>java</a>,
+    
+    <a href='/tags/内存/'>内存</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        
+记录一次系统内存泄漏处理过程
+
+
+系统问题和背景
+业务量猛增、系统涉及大量的文件读写、删除
+系统运行一段时间weblogic控制台打开很慢
+weblogic出现stuck线程
+weblogic jvm 监控显示内存使用达到90%一直不释放，手动gc也没效果
+
+问题处理
+生成dump文件1jmap -dump:live,format=b,file=12077.bin 12077
+利用Eclipse MemoryAnalyzer分析dum
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2021/01/26/mem/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -543,46 +592,6 @@ redis 安装
                     
                     <p class="pull-right readMore">
                         <a href="/2019/12/28/jdkmysqlredis/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2019/02/15/truncate恢复/">TRUNCATE恢复</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2019-02-15T03:24:45.000Z" itemprop="datePublished">
-          2019-02-15
-      </time>
-    
-    
-    | 
-    <a href='/tags/oracle-数据恢复-truncate/'>oracle 数据恢复 truncate</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        
-利用   FY_Recover_Data   包实现 truncate 表数据恢复
-
-装备工作
-执行 FY_Recover_Data.pck  （sys用户）
-查找filename 适用于定位具体的数据文件12345  select b.file_name from dba_extents a, dba_data_files bwhere segment_name &#x3D; &#39;删除表&#39;  and a.owner &
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2019/02/15/truncate恢复/">Read More...</a>
                     </p>
                     
                 </div>
