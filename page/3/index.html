@@ -80,7 +80,7 @@
         		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
-				    <li><a href="/categories/工作学习/" class="animsition-link">工作学习<small>(17)</small></a></li>
+				    <li><a href="/categories/工作学习/" class="animsition-link">工作学习<small>(18)</small></a></li>
 				    
 				    <li><a href="/categories/读书/旅游/" class="animsition-link">旅游<small>(5)</small></a></li>
 				    
@@ -201,6 +201,48 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2019/12/28/jdkmysqlredis/">Jdk1.8+Redis+Mysql安装</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2019-12-28T01:04:46.000Z" itemprop="datePublished">
+          2019-12-28
+      </time>
+    
+    
+    | 
+    <a href='/tags/jdk/'>jdk</a>,
+    
+    <a href='/tags/redis/'>redis</a>,
+    
+    <a href='/tags/mysql/'>mysql</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        linux 下jdk+redis+mysql安装笔记
+redis 安装
+
+12345678910111213wget http://download.redis.io/releases/redis-4.0.9.tar.gztar -zxf redis-4.0.9.tar.gzmv redis-4.0.9 /usr/local/rediscd /usr/local/redismakecd srcmake install mv redis.
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2019/12/28/jdkmysqlredis/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -557,48 +599,6 @@ Vue 的核心库只关注视图层,便于与第三方库或既有项目整合。
                     
                     <p class="pull-right readMore">
                         <a href="/2018/08/27/vue/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2018/07/02/mysql-seq/">mysql_seq</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-07-02T10:58:48.000Z" itemprop="datePublished">
-          2018-07-02
-      </time>
-    
-    
-    | 
-    <a href='/tags/mysql/'>mysql</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        介绍
-mysq 中默认没有类似 oracle 的sequence 功能，我们自己写函数实现类似功能。大致思路：
-
-首先，建立一个存放seq的表，字段包括：当前值，自增值。然后，定义nextval，currval函数，分别实现获取下次增长值和当前值。
-
-实现
-结构图：
-建立seq的表12345678910111213drop table if exists cm_sequence;/*===========================
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2018/07/02/mysql-seq/">Read More...</a>
                     </p>
                     
                 </div>
