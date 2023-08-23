@@ -80,7 +80,7 @@
         		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
-				    <li><a href="/categories/工作学习/" class="animsition-link">工作学习<small>(18)</small></a></li>
+				    <li><a href="/categories/工作学习/" class="animsition-link">工作学习<small>(19)</small></a></li>
 				    
 				    <li><a href="/categories/读书/旅游/" class="animsition-link">旅游<small>(5)</small></a></li>
 				    
@@ -205,6 +205,53 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
+                    <h3><a href="/2023/08/18/k8s安装/">k8s安装</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2023-08-18T09:15:03.000Z" itemprop="datePublished">
+          2023-08-18
+      </time>
+    
+    
+    | 
+    <a href='/tags/k8s/'>k8s</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        
+记录 k8s最新版  v1.28  (截至2023/8/18) 安装过程
+
+虚拟机装备三台虚拟机：
+
+主节点 ：k8s-master  (2.8G 2C 20GB、192.168.64.211）
+
+node节点：k8s-node01 (2.4G 1C 20GB、192.168.64.212)
+
+node节点：k8s-node02 (2.4G 1C 20GB、192.168.64.210)
+
+
+安装Docker容器运行时环境使用Dock
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2023/08/18/k8s安装/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
                     <h3><a href="/2023/07/27/Kylin-V10/">Kylin-V10</a></h3>
                     <span>
                         <span class="post-meta">
@@ -214,11 +261,11 @@
     
     
     | 
+    <a href='/tags/oracle/'>oracle</a>,
+    
     <a href='/tags/Kylin/'>Kylin</a>,
     
     <a href='/tags/weblogic/'>weblogic</a>,
-    
-    <a href='/tags/oracle/'>oracle</a>,
     
     <a href='/tags/nginx/'>nginx</a>,
     
@@ -564,43 +611,6 @@ docker安装1234567891011121314151617181920212223242526272829303132tar -zxvf doc
                     
                     <p class="pull-right readMore">
                         <a href="/2021/08/30/dock-notebook/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2021/08/20/数据倾斜/">数据倾斜</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-08-20T01:42:44.000Z" itemprop="datePublished">
-          2021-08-20
-      </time>
-    
-    
-    | 
-    <a href='/tags/大数据/'>大数据</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        &emsp; 由于数据分布不均衡导致个别reduce数据量太大，整个任务卡在99%无法完成，查看task counter 输入输出是正常任务的几十倍。
-下面是处理办法
-针对关联key值大量空的情况&emsp; 一种是本身数据中就有空值，还有一种情况通过多个 left join 关联导致有空值。 针对该情况关联条件做判空随机处理，比如：coalesce(col,concat(‘hive_rand’,rand()))  。&emsp; 如果
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2021/08/20/数据倾斜/">Read More...</a>
                     </p>
                     
                 </div>
