@@ -84,7 +84,7 @@
 				    
 				    <li><a href="/categories/读书/旅游/" class="animsition-link">旅游<small>(5)</small></a></li>
 				    
-				    <li><a href="/categories/读书/" class="animsition-link">读书<small>(8)</small></a></li>
+				    <li><a href="/categories/读书/" class="animsition-link">读书<small>(9)</small></a></li>
 				    
 				    <li><a href="/categories/项目/" class="animsition-link">项目<small>(1)</small></a></li>
 				    
@@ -201,6 +201,45 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2020/05/09/nfs/">NFS</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-05-09T03:39:49.000Z" itemprop="datePublished">
+          2020-05-09
+      </time>
+    
+    
+    | 
+    <a href='/tags/nfs/'>nfs</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        NFS 共享文件系统
+
+服务端：
+
+1234567891011121314151617rpm -qa | grep nfsrpm -qa | grep rpcbindyum -y install nfs-utils rpcbindmkdir -p /weblogic/ftpchmod 666 /weblogic/ftpvim /etc/exports /weblogic/ftp xxx.xxx.xxx.0/24(rw,root_squa
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2020/05/09/nfs/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -548,48 +587,6 @@ ogg软件安装
                     
                     <p class="pull-right readMore">
                         <a href="/2018/09/20/ogg/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2018/09/07/Cookie实现SSO/">Cookie实现SSO</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-09-07T09:50:35.000Z" itemprop="datePublished">
-          2018-09-07
-      </time>
-    
-    
-    | 
-    <a href='/tags/sso/'>sso</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        介绍
-两个拥有相同顶级域名的网站:a:  www.lb.xxxx （主网站）b: game.lb.xxxx   (需要共享登陆信息网站)需要实现：登陆a网站，跳转b网站的时候，免登陆。同时保留b网站原有的登陆入口。大致思路：
-
-1，设置加密字段，存储用户主键、签名信息。2，修改a网站登陆逻辑，增加登陆成功，回写加密字段到cookie。3，修改b网站登陆逻辑，增加获取cookie自动登陆功能。
-
-实现
-设置加密字段加密字段主要有3部分：
-
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2018/09/07/Cookie实现SSO/">Read More...</a>
                     </p>
                     
                 </div>
