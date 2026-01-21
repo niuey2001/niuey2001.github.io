@@ -569,9 +569,7 @@ redis 安装
                 <div class="col-md-8">
                     <p>
                       
-                        LOGGING模式这是日志记录的缺省模式，无论数据库是否处于归档模式，这并不改变表空间与对象级别上的缺省的日志记录模式。对于临时表空间将不记录日志到联机重做日志文件。
-FORCE LOGGING强制记录日志，即对数据库中的所有操作都产生日志信息，并将该信息写入到联机重做日志文件。
-在使用DATA GUARD 时，要求使用强制记录日志模式。注：FORCE LOGGING并不比一般的LOGGING记录的日志多,数据库在FORCE LOGGI
+                        12345678910111213141516171819202122232425262728293031323334# oracle log select log_mode,force_logging from v$database;alter database force  logging;     insert /*+append parallel(32)*/ into tab nologging alter database &
                       
                     </p>
                     
